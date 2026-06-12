@@ -1,1 +1,25 @@
+name: My First CI/CD Pipeline
 
+on: push   # Event: triggers on every push
+
+jobs:
+  build:    # Job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Show current directory
+        run: pwd
+
+      - name: List files
+        run: ls -la
+
+      - name: Make directory
+        run: mkdir test-folder
+
+      - name: Echo message
+        run: echo "I am learning Github Actions"
+
+      - name: Verify directory created
+        run: ls -la
